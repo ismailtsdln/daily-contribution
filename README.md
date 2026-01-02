@@ -1,17 +1,25 @@
 # Daily GitHub Contribution Trigger
 
-This repository is a minimal and automated setup to generate **daily GitHub contributions** using **GitHub Actions**.
+![GitHub Actions](https://img.shields.io/github/actions/workflow/status/ismailtsdln/daily-contribution/daily.yml?branch=main)
+![GitHub last commit](https://img.shields.io/github/last-commit/ismailtsdln/daily-contribution)
+![GitHub repo size](https://img.shields.io/github/repo-size/ismailtsdln/daily-contribution)
+![License](https://img.shields.io/github/license/ismailtsdln/daily-contribution)
+![GitHub stars](https://img.shields.io/github/stars/ismailtsdln/daily-contribution?style=social)
 
-It updates a small file once per day and commits the change automatically, ensuring consistent activity on the GitHub contribution graph.
+A minimal, transparent, and automated setup to generate **daily GitHub contributions** using **GitHub Actions**.
+
+This repository updates a small internal file once per day and commits the change automatically, ensuring **consistent and legitimate activity** on the GitHub contribution graph.
 
 ---
 
 ## 🚀 How It Works
 
-- GitHub Actions runs on a daily schedule (cron)
-- A simple text file (`heartbeat.txt`) is updated with the current timestamp
-- The change is automatically committed to the repository
-- Each successful run generates **one contribution** on your GitHub profile
+- GitHub Actions runs on a scheduled **cron job**
+- A lightweight file (`.github/heartbeat.txt`) is updated with the current timestamp
+- The change is committed automatically to the `main` branch
+- Each successful run results in **one valid GitHub contribution**
+
+This approach follows GitHub’s contribution rules and avoids unnecessary commit noise.
 
 ---
 
@@ -20,12 +28,13 @@ It updates a small file once per day and commits the change automatically, ensur
 This project is useful for:
 
 - Maintaining a consistent contribution streak
-- Testing GitHub Actions cron workflows
-- Learning basic GitHub Actions automation
-- Keeping your profile active during busy periods
+- Learning and testing GitHub Actions scheduling (cron)
+- Understanding automated commits in CI/CD workflows
+- Keeping your GitHub profile active during busy periods
+- Serving as a reference template for automation-first repositories
 
-> This project does **not** spam commits.  
-> It generates **one clean commit per day**, which aligns with GitHub’s contribution rules.
+> ⚠️ This project intentionally generates **only one commit per day**.  
+> Multiple commits on the same day do **not** increase contribution count.
 
 ---
 
@@ -33,7 +42,7 @@ This project is useful for:
 
 ```text
 .
-├── heartbeat.txt
-└── .github
-    └── workflows
-        └── daily.yml
+├── .github
+│   ├── workflows
+│   │   └── daily.yml
+│   └── heartbeat.txt
