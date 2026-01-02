@@ -15,7 +15,7 @@ jobs:
 
       - name: Update heartbeat
         run: |
-          echo "Last update: $(date)" >> heartbeat.txt
+          echo "Last update: $(date)" > .github/heartbeat.txt
 
       - name: Auto commit
         uses: stefanzweifel/git-auto-commit-action@v5
