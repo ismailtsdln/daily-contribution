@@ -12,17 +12,19 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Update heartbeat
+      - name: Update heartbeat file
         run: |
-          echo "Last update: $(date)" > .github/heartbeat.txt
+          echo "Last update: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" > .github/heartbeat.txt
 
-      - name: Auto commit
+      - name: Auto commit and push
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "daily contribution"
           branch: main
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_user_name: "github-actions[bot]"
